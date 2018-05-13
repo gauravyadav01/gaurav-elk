@@ -1,0 +1,19 @@
+---
+- import_playbook: common.yml
+
+- hosts: all
+  become: true
+  roles:
+    - role: elasticsearch
+      es_instance_name: "{{ ansible_hostname }}"
+      es_data_dirs: "/opt/elasticsearch/data" 
+      es_log_dir: "/opt/elasticsearch/logs"
+      es_config: {
+        node.name: "{{ ansible_hostname }}",
+        cluster.name: es-cluster,
+        network.host: "{{ IPADDRESS }}",
+        bootstrap.memory_lock: true,
+      }
+      vars: 
+        es_heap_size: 1g
+      

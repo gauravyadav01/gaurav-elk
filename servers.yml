@@ -1,0 +1,16 @@
+---
+  :domain: example.com
+  :network: 192.168.10.0/24
+  :box: bento/centos-7.4
+  :vms:
+    - :name: es1
+      :ip: 192.168.11.2
+      :role: es-master
+      :playbook: elasticsearch
+      :cpu: 2
+      :memory: 2048
+    - :name: lg
+      :ip: 192.168.11.3
+      :role: es-master
+      :playbook: logstash-kibana
+      :memory: 1024

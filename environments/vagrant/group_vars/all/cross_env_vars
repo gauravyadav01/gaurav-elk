@@ -1,0 +1,6 @@
+---
+consul_retry_join: true
+consul_disable_update_check: true
+java_implementation: oracle
+nomad_version: "0.7.0-rc1"
+

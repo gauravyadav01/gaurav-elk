@@ -1,0 +1,11 @@
+- src: geerlingguy.java
+  name: java
+  
+- src: elastic.elasticsearch
+  name: elasticsearch
+
+- src: https://github.com/gauravyadav01/gaurav-logstash/archive/v0.1.tar.gz
+  name: logstash
+
+- src: https://github.com/gauravyadav01/gaurav-kibana/archive/v0.1.tar.gz
+  name: kibana

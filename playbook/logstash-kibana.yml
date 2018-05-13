@@ -1,0 +1,17 @@
+---
+- import_playbook: common.yml
+
+- hosts: all
+  become: yes
+  roles: 
+    - role: logstash
+      logstash_local_syslog_path: /var/log/messages
+      logstash_elasticsearch_hosts: "{{ elasticsearch_host }}"
+      logstash_yml_config: {
+        http.host: "{{ IPADDRESS }}"
+      }
+    - role: kibana
+      kibana_server_host: "{{ IPADDRESS }}"
+      kibana_elasticsearch_url: "{{ elasticsearch_host }}"
+  
+
